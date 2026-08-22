@@ -1,0 +1,16 @@
+#!/bin/sh
+set -e
+echo "[pre-commit] Ejecutando validaciones..."
+
+if git diff --cached --name-only | grep -E '(^|/)\.env($|\.)|secrets\.|\.pem$|\.key$' >/dev/null 2>&1; then
+  echo "ERROR: archivo sensible detectado en staging."
+  exit 1
+fi
+
+if ! git diff --cached --check; then
+  echo "ERROR: problemas de formato/whitespace."
+  exit 1
+fi
+
+echo "[pre-commit] OK"
+exit 0

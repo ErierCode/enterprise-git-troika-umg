@@ -1,0 +1,12 @@
+#!/bin/sh
+MSG_FILE="$1"
+MSG=$(head -n 1 "$MSG_FILE")
+PATTERN='^(feat|fix|docs|test|refactor|chore): .+([[:space:]]AB#[0-9]+)?$'
+
+echo "$MSG" | grep -Eq "$PATTERN"
+if [ $? -ne 0 ]; then
+  echo "ERROR: Mensaje inválido."
+  echo "Ejemplo: feat: agregar registro de pacientes AB#25"
+  exit 1
+fi
+exit 0
