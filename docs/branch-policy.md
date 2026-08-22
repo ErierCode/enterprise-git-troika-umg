@@ -1,5 +1,5 @@
 # Política de ramas propuesta
-
+#Cambio realizado por jahn desde github.
 ## main
 - Pull Request obligatorio.
 - Mínimo 1 reviewer.
