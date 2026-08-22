@@ -24,3 +24,6 @@ git config core.hooksPath
 
 ## Flujo objetivo
 Azure Boards → Feature Branch → Commit → Push → Pull Request → Code Review → Policies → Merge
+
+
+## Escenario 1: cambios directo a main
